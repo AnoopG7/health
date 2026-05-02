@@ -1,10 +1,11 @@
 import { lazy, Suspense, type ComponentType } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from '@/constants/routes'
-import RootLayout from '@/layouts/RootLayout'
+import { RootLayout, AuthLayout, BookingLayout } from '@/layouts'
+import { ProtectedRoute } from '@/components/auth'
 import PageSkeleton from '@/components/common/PageSkeleton'
 
-// ── Lazy imports (module-level, never recreated) ──────────────────────────
+// ── Lazy imports ──────────────────────────────────────────────────────────
 const Home = lazy(() => import('@/pages/home/Home'))
 const Services = lazy(() => import('@/pages/services/Services'))
 const ServiceDetail = lazy(() => import('@/pages/services/ServiceDetail'))
@@ -30,39 +31,7 @@ const Settings = lazy(() => import('@/pages/account/Settings'))
 const Showcase = lazy(() => import('@/pages/Showcase'))
 const Booking = lazy(() => import('@/pages/booking/Booking'))
 
-// ── Route config ──────────────────────────────────────────────────────────
-interface RouteConfig {
-  path: string
-  element: ComponentType<unknown>
-  children?: RouteConfig[]
-}
-
-const routes: RouteConfig[] = [
-  { path: ROUTES.HOME, element: Home },
-  { path: ROUTES.SERVICES, element: Services },
-  { path: '/services/:slug', element: ServiceDetail },
-  { path: ROUTES.TRAINERS, element: Trainers },
-  { path: '/trainers/:id', element: TrainerProfile },
-  { path: ROUTES.PROGRAMS, element: Programs },
-  { path: '/programs/:slug', element: ProgramDetail },
-  { path: ROUTES.DIET_PLANS, element: DietPlans },
-  { path: '/diet-plans/:slug', element: DietPlanDetail },
-  { path: ROUTES.BLOG, element: Blog },
-  { path: '/blog/:slug', element: BlogPost },
-  { path: ROUTES.ABOUT, element: About },
-  { path: ROUTES.CONTACT, element: Contact },
-  { path: ROUTES.PRICING, element: Pricing },
-  { path: ROUTES.LOGIN, element: Login },
-  { path: ROUTES.REGISTER, element: Register },
-  { path: ROUTES.FORGOT_PASSWORD, element: ForgotPassword },
-  { path: ROUTES.ACCOUNT, element: Dashboard },
-  { path: ROUTES.ACCOUNT_BOOKINGS, element: MyBookings },
-  { path: ROUTES.ACCOUNT_PROFILE, element: Profile },
-  { path: ROUTES.ACCOUNT_SETTINGS, element: Settings },
-  { path: ROUTES.SHOWCASE, element: Showcase },
-]
-
-// ── Helper: Suspense-wrapped lazy route ───────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────
 function LazyRoute({ element: Component }: { element: ComponentType<unknown> }) {
   return (
     <Suspense fallback={<PageSkeleton />}>
@@ -71,32 +40,65 @@ function LazyRoute({ element: Component }: { element: ComponentType<unknown> }) 
   )
 }
 
-// ── Recursive route renderer ──────────────────────────────────────────────
-function renderRoutes(routeList: RouteConfig[]): React.ReactNode[] {
-  return routeList.map((route) => (
-    <Route
-      key={route.path}
-      path={route.path}
-      element={<LazyRoute element={route.element} />}
-    >
-      {route.children ? renderRoutes(route.children) : undefined}
-    </Route>
-  ))
+function ProtectedLazyRoute({ element: Component }: { element: ComponentType<unknown> }) {
+  return (
+    <ProtectedRoute>
+      <LazyRoute element={Component} />
+    </ProtectedRoute>
+  )
 }
 
-// ── App Routes ────────────────────────────────────────────────────────────
+function AuthLazyRoute({ element: Component }: { element: ComponentType<unknown> }) {
+  return (
+    <ProtectedRoute requireAuth={false}>
+      <LazyRoute element={Component} />
+    </ProtectedRoute>
+  )
+}
+
+// ── Routes ────────────────────────────────────────────────────────────────
 export default function AppRoutes() {
   return (
     <Routes>
+      {/* Public routes with full layout */}
       <Route element={<RootLayout />}>
-        {renderRoutes(routes)}
+        <Route path={ROUTES.HOME} element={<LazyRoute element={Home} />} />
+        <Route path={ROUTES.SERVICES} element={<LazyRoute element={Services} />} />
+        <Route path="/services/:slug" element={<LazyRoute element={ServiceDetail} />} />
+        <Route path={ROUTES.TRAINERS} element={<LazyRoute element={Trainers} />} />
+        <Route path="/trainers/:id" element={<LazyRoute element={TrainerProfile} />} />
+        <Route path={ROUTES.PROGRAMS} element={<LazyRoute element={Programs} />} />
+        <Route path="/programs/:slug" element={<LazyRoute element={ProgramDetail} />} />
+        <Route path={ROUTES.DIET_PLANS} element={<LazyRoute element={DietPlans} />} />
+        <Route path="/diet-plans/:slug" element={<LazyRoute element={DietPlanDetail} />} />
+        <Route path={ROUTES.BLOG} element={<LazyRoute element={Blog} />} />
+        <Route path="/blog/:slug" element={<LazyRoute element={BlogPost} />} />
+        <Route path={ROUTES.ABOUT} element={<LazyRoute element={About} />} />
+        <Route path={ROUTES.CONTACT} element={<LazyRoute element={Contact} />} />
+        <Route path={ROUTES.PRICING} element={<LazyRoute element={Pricing} />} />
+        <Route path={ROUTES.SHOWCASE} element={<LazyRoute element={Showcase} />} />
+        <Route path="*" element={<LazyRoute element={NotFound} />} />
       </Route>
 
-      {/* Booking flow (standalone, no navbar/footer) */}
-      <Route path="/book/:serviceSlug" element={<LazyRoute element={Booking} />} />
+      {/* Auth routes with minimal layout */}
+      <Route element={<AuthLayout />}>
+        <Route path={ROUTES.LOGIN} element={<AuthLazyRoute element={Login} />} />
+        <Route path={ROUTES.REGISTER} element={<AuthLazyRoute element={Register} />} />
+        <Route path={ROUTES.FORGOT_PASSWORD} element={<AuthLazyRoute element={ForgotPassword} />} />
+      </Route>
 
-      {/* Catch-all 404 */}
-      <Route path="*" element={<LazyRoute element={NotFound} />} />
+      {/* Protected account routes with full layout */}
+      <Route element={<RootLayout />}>
+        <Route path={ROUTES.ACCOUNT} element={<ProtectedLazyRoute element={Dashboard} />} />
+        <Route path={ROUTES.ACCOUNT_BOOKINGS} element={<ProtectedLazyRoute element={MyBookings} />} />
+        <Route path={ROUTES.ACCOUNT_PROFILE} element={<ProtectedLazyRoute element={Profile} />} />
+        <Route path={ROUTES.ACCOUNT_SETTINGS} element={<ProtectedLazyRoute element={Settings} />} />
+      </Route>
+
+      {/* Booking flow (standalone layout) */}
+      <Route element={<BookingLayout />}>
+        <Route path="/book/:serviceSlug" element={<ProtectedLazyRoute element={Booking} />} />
+      </Route>
     </Routes>
   )
 }

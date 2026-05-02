@@ -1,0 +1,74 @@
+[
+  {
+    "id": "faq-001",
+    "category": "General",
+    "question": "What is VitalEdge?",
+    "answer": "VitalEdge is a comprehensive health and fitness platform that connects you with certified professionals across physiotherapy, personal training, nutrition coaching, mental wellness, and more. We provide everything you need under one roof."
+  },
+  {
+    "id": "faq-002",
+    "category": "General",
+    "question": "Do I need to be a member to use your services?",
+    "answer": "No membership is required. You can book individual sessions or choose one of our membership tiers for discounted rates and additional benefits."
+  },
+  {
+    "id": "faq-003",
+    "category": "Booking",
+    "question": "How do I book a session?",
+    "answer": "Simply browse our services, select the one you're interested in, choose your preferred trainer and time slot, and confirm your booking. You can book online or call us directly."
+  },
+  {
+    "id": "faq-004",
+    "category": "Booking",
+    "question": "Can I cancel or reschedule a booking?",
+    "answer": "Yes, you can cancel or reschedule up to 24 hours before your session at no charge. Cancellations within 24 hours may incur a fee. Manage your bookings through your account dashboard."
+  },
+  {
+    "id": "faq-005",
+    "category": "Booking",
+    "question": "How far in advance can I book?",
+    "answer": "You can book up to 4 weeks in advance. We recommend booking early as popular trainers and time slots fill up quickly."
+  },
+  {
+    "id": "faq-006",
+    "category": "Payments",
+    "question": "What payment methods do you accept?",
+    "answer": "We accept all major credit and debit cards, PayPal, and bank transfers. Payment is collected at the time of booking."
+  },
+  {
+    "id": "faq-007",
+    "category": "Payments",
+    "question": "Do you offer refunds?",
+    "answer": "If you cancel within 24 hours of your session, a full refund is issued to your original payment method. For memberships, unused sessions may be refunded on a case-by-case basis."
+  },
+  {
+    "id": "faq-008",
+    "category": "Trainers",
+    "question": "Are your trainers certified?",
+    "answer": "Absolutely. Every trainer on our platform holds relevant certifications from recognised institutions. You can view each trainer's credentials on their profile page."
+  },
+  {
+    "id": "faq-009",
+    "category": "Trainers",
+    "question": "Can I choose a specific trainer?",
+    "answer": "Yes, you can browse all our trainers and select the one that best fits your needs. Each trainer's profile lists their specialties, availability, and pricing."
+  },
+  {
+    "id": "faq-010",
+    "category": "Services",
+    "question": "Do you offer online sessions?",
+    "answer": "Yes, many of our services are available online, including nutrition coaching, mental wellness sessions, and some training programmes. Look for the 'online' option when booking."
+  },
+  {
+    "id": "faq-011",
+    "category": "Account",
+    "question": "How do I create an account?",
+    "answer": "Click 'Sign Up' in the top right corner, fill in your details, and you're ready to go. It takes less than a minute."
+  },
+  {
+    "id": "faq-012",
+    "category": "Account",
+    "question": "Can I update my personal information?",
+    "answer": "Yes, go to your account settings to update your name, email, phone number, and preferences. You can also change your password from there."
+  }
+]

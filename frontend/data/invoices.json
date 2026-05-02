@@ -1,0 +1,47 @@
+[
+  {
+    "id": "INV-001",
+    "status": "active",
+    "method": "Credit Card",
+    "amount": "$65.00",
+    "bookingId": "bkg-001",
+    "date": "2025-04-05",
+    "dueDate": "2025-04-05"
+  },
+  {
+    "id": "INV-002",
+    "status": "pending",
+    "method": "PayPal",
+    "amount": "$40.00",
+    "bookingId": "bkg-002",
+    "date": "2025-04-07",
+    "dueDate": "2025-04-07"
+  },
+  {
+    "id": "INV-003",
+    "status": "paid",
+    "method": "Credit Card",
+    "amount": "$70.00",
+    "bookingId": "bkg-003",
+    "date": "2025-03-25",
+    "dueDate": "2025-03-25"
+  },
+  {
+    "id": "INV-004",
+    "status": "paid",
+    "method": "Bank Transfer",
+    "amount": "$55.00",
+    "bookingId": "bkg-004",
+    "date": "2025-03-20",
+    "dueDate": "2025-03-20"
+  },
+  {
+    "id": "INV-005",
+    "status": "paid",
+    "method": "Credit Card",
+    "amount": "$35.00",
+    "bookingId": "bkg-005",
+    "date": "2025-03-15",
+    "dueDate": "2025-03-15"
+  }
+]

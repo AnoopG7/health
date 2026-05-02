@@ -1,0 +1,112 @@
+[
+  {
+    "id": "tst-001",
+    "quote": "I came to VitalEdge after a knee injury that left me unable to run. Sarah's physio programme had me back on the trails in 8 weeks. Not just running — competing. Her expertise is next level.",
+    "name": "Tom Richards",
+    "role": "Trail Runner",
+    "service": "Physiotherapy",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-03-20T00:00:00Z"
+  },
+  {
+    "id": "tst-002",
+    "quote": "James's 12-week strength programme added 40kg to my squat and 25kg to my bench. But more importantly, I've never felt more confident in the gym. Every session had a clear purpose and I could see progress every week.",
+    "name": "Aisha Patel",
+    "role": "Software Engineer",
+    "service": "Strength Training",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-03-18T00:00:00Z"
+  },
+  {
+    "id": "tst-003",
+    "quote": "The Fat Loss Bootcamp was brutal but in the best way possible. Lost 12kg in 8 weeks and the nutrition guidance from David made all the difference. I actually learned how to eat properly for the first time.",
+    "name": "Chris Martinez",
+    "role": "Teacher",
+    "service": "Fat Loss Bootcamp",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-03-15T00:00:00Z"
+  },
+  {
+    "id": "tst-004",
+    "quote": "As someone who sits at a desk 10 hours a day, Elena's mobility sessions have been life-changing. My chronic back pain is gone, I can touch my toes for the first time in years, and my posture is genuinely better.",
+    "name": "Sarah Kim",
+    "role": "Product Designer",
+    "service": "Yoga & Mobility",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-03-12T00:00:00Z"
+  },
+  {
+    "id": "tst-005",
+    "quote": "Lisa guided me through my postpartum recovery with such care and expertise. She understood exactly where my body was at and never pushed too hard. By week 10 I felt like myself again — stronger, actually.",
+    "name": "Emma Thompson",
+    "role": "New Mother",
+    "service": "Postpartum Recovery",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-03-08T00:00:00Z"
+  },
+  {
+    "id": "tst-006",
+    "quote": "Rachel's mental wellness sessions gave me tools I use every single day. I was burning out from work and training, and she helped me find the balance I'd been missing. My performance actually improved when I started prioritising my mental health.",
+    "name": "Jake Williams",
+    "role": "Marathon Runner",
+    "service": "Mental Wellness",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-03-05T00:00:00Z"
+  },
+  {
+    "id": "tst-007",
+    "quote": "I've been to dozens of massage therapists and Alex is hands-down the best. He found trigger points in my shoulders that nobody else had identified. After 3 sessions, the headaches I'd been getting for months just stopped.",
+    "name": "Michael Chen",
+    "role": "Accountant",
+    "service": "Sports Massage",
+    "rating": 4,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-02-28T00:00:00Z"
+  },
+  {
+    "id": "tst-008",
+    "quote": "David's nutrition coaching completely changed my relationship with food. I went from restrictive dieting to a flexible approach that actually works. Down 15kg, stronger in the gym, and I actually enjoy eating now.",
+    "name": "Priya Sharma",
+    "role": "Marketing Manager",
+    "service": "Nutrition Coaching",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-02-22T00:00:00Z"
+  },
+  {
+    "id": "tst-009",
+    "quote": "The Advanced Powerlifting programme took me from a 500kg total to 580kg in 16 weeks. James's attention to detail on technique and his competition-day strategy were worth every penny. Won my weight class at regionals.",
+    "name": "Dan O'Brien",
+    "role": "Competitive Powerlifter",
+    "service": "Advanced Powerlifting",
+    "rating": 5,
+    "image": "",
+    "verified": true,
+    "createdAt": "2025-02-15T00:00:00Z"
+  },
+  {
+    "id": "tst-010",
+    "quote": "Marcus's HIIT sessions are the hardest thing I've ever done — and I love every minute of them. The energy in the group classes is electric, and the results speak for themselves. Best shape of my life at 42.",
+    "name": "Rebecca Foster",
+    "role": "Business Owner",
+    "service": "HIIT & Cardio",
+    "rating": 5,
+    "image": "",
+    "verified": false,
+    "createdAt": "2025-02-08T00:00:00Z"
+  }
+]

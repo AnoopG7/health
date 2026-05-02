@@ -1,0 +1,120 @@
+[
+  {
+    "id": "dp-001",
+    "slug": "lean-muscle-meal-plan",
+    "name": "Lean Muscle Meal Plan",
+    "description": "High-protein, balanced macros plan designed to support muscle growth without excess fat gain.",
+    "longDescription": "This meal plan is built for anyone looking to add lean muscle mass while minimising fat gain. Each day provides 2,200-2,500 calories with a macro split of roughly 40% protein, 35% carbs, and 25% fat. Meals are designed around whole, nutrient-dense foods with strategic carb timing around workouts. Includes 4 meals per day with pre- and post-workout nutrition windows clearly marked. Recipe cards with full ingredient lists and preparation instructions are provided for every meal.",
+    "duration": "8 weeks",
+    "goal": "muscle-gain",
+    "caloriesPerDay": 2400,
+    "price": 89,
+    "image": "",
+    "mealsPerDay": 4,
+    "dietaryType": "balanced",
+    "sampleMeals": [
+      { "mealType": "breakfast", "name": "Greek Yogurt Parfait with Granola", "calories": 420, "protein": 32, "carbs": 48, "fat": 12 },
+      { "mealType": "lunch", "name": "Grilled Chicken Quinoa Bowl", "calories": 580, "protein": 45, "carbs": 55, "fat": 16 },
+      { "mealType": "dinner", "name": "Salmon with Sweet Potato & Broccoli", "calories": 650, "protein": 42, "carbs": 52, "fat": 22 },
+      { "mealType": "snack", "name": "Protein Shake with Banana & Almond Butter", "calories": 380, "protein": 30, "carbs": 38, "fat": 14 }
+    ],
+    "trainerId": "trn-005",
+    "trainerName": "David Okonkwo",
+    "createdAt": "2024-05-01T00:00:00Z",
+    "updatedAt": "2025-03-15T00:00:00Z"
+  },
+  {
+    "id": "dp-002",
+    "slug": "plant-power-diet",
+    "name": "Plant Power Diet",
+    "description": "Complete vegan meal plan with complete amino acid profiles and optimal protein timing.",
+    "longDescription": "This vegan meal plan proves you don't need animal products to build muscle and perform at your best. Every meal is designed to deliver complete amino acid profiles through strategic food combining—think rice and beans, quinoa and chickpeas, or hemp and pea protein blends. With approximately 2,000 calories per day, this plan is ideal for moderate muscle gain or maintenance on a plant-based diet. Includes a comprehensive supplement guide covering B12, iron, omega-3, and creatine for vegan athletes.",
+    "duration": "6 weeks",
+    "goal": "muscle-gain",
+    "caloriesPerDay": 2000,
+    "price": 79,
+    "image": "",
+    "mealsPerDay": 4,
+    "dietaryType": "vegan",
+    "sampleMeals": [
+      { "mealType": "breakfast", "name": "Tofu Scramble with Spinach & Avocado Toast", "calories": 450, "protein": 28, "carbs": 42, "fat": 18 },
+      { "mealType": "lunch", "name": "Lentil & Chickpea Buddha Bowl", "calories": 520, "protein": 26, "carbs": 68, "fat": 14 },
+      { "mealType": "dinner", "name": "Tempeh Stir-Fry with Brown Rice", "calories": 580, "protein": 32, "carbs": 62, "fat": 18 },
+      { "mealType": "snack", "name": "Trail Mix with Hemp Seeds & Dark Chocolate", "calories": 320, "protein": 12, "carbs": 28, "fat": 20 }
+    ],
+    "trainerId": "trn-005",
+    "trainerName": "David Okonkwo",
+    "createdAt": "2024-06-01T00:00:00Z",
+    "updatedAt": "2025-03-10T00:00:00Z"
+  },
+  {
+    "id": "dp-003",
+    "slug": "keto-cut-plan",
+    "name": "Keto Cut Plan",
+    "description": "Low-carb ketogenic plan for rapid fat loss while preserving lean muscle mass.",
+    "longDescription": "This ketogenic meal plan is engineered for aggressive fat loss. By keeping carbohydrates below 30g per day and increasing healthy fats to 70% of total calories, your body shifts into ketosis—burning stored fat as its primary fuel source. Each meal is rich in omega-3 fatty acids, fibre, and micronutrients to prevent the common keto side effects. Designed for 1,600-1,800 calories per day, this plan includes an electrolyte supplementation protocol and a detailed guide to navigating the adaptation phase (weeks 1-2).",
+    "duration": "4 weeks",
+    "goal": "weight-loss",
+    "caloriesPerDay": 1700,
+    "price": 69,
+    "image": "",
+    "mealsPerDay": 3,
+    "dietaryType": "keto",
+    "sampleMeals": [
+      { "mealType": "breakfast", "name": "Eggs with Bacon & Avocado", "calories": 520, "protein": 32, "carbs": 6, "fat": 40 },
+      { "mealType": "lunch", "name": "Caesar Salad with Grilled Chicken", "calories": 480, "protein": 38, "carbs": 8, "fat": 34 },
+      { "mealType": "dinner", "name": "Ribeye Steak with Asparagus & Butter", "calories": 620, "protein": 44, "carbs": 5, "fat": 48 }
+    ],
+    "trainerId": "trn-005",
+    "trainerName": "David Okonkwo",
+    "createdAt": "2024-07-01T00:00:00Z",
+    "updatedAt": "2025-02-28T00:00:00Z"
+  },
+  {
+    "id": "dp-004",
+    "slug": "endurance-fuel-plan",
+    "name": "Endurance Fuel Plan",
+    "description": "High-carbohydrate plan optimised for marathon training and long-distance performance.",
+    "longDescription": "Endurance athletes have unique nutritional demands, and this plan is built to meet them. With a macro split of 55% carbs, 25% protein, and 20% fat, each day provides 2,800-3,200 calories to fuel long training sessions and promote rapid recovery. Strategic carb loading protocols are included for race week, and in-training fuel strategies (gels, chews, hydration) are mapped out for runs over 90 minutes. Includes gut training protocols to improve carbohydrate absorption during exercise.",
+    "duration": "12 weeks",
+    "goal": "maintenance",
+    "caloriesPerDay": 3000,
+    "price": 99,
+    "image": "",
+    "mealsPerDay": 5,
+    "dietaryType": "balanced",
+    "sampleMeals": [
+      { "mealType": "breakfast", "name": "Oatmeal with Berries, Honey & Whey Protein", "calories": 550, "protein": 30, "carbs": 78, "fat": 10 },
+      { "mealType": "lunch", "name": "Pasta with Turkey Meatballs & Marinara", "calories": 680, "protein": 40, "carbs": 88, "fat": 14 },
+      { "mealType": "dinner", "name": "Chicken Rice Bowl with Mixed Vegetables", "calories": 620, "protein": 38, "carbs": 72, "fat": 14 },
+      { "mealType": "snack", "name": "Energy Balls with Oats, Dates & Peanut Butter", "calories": 340, "protein": 12, "carbs": 42, "fat": 14 }
+    ],
+    "trainerId": "trn-005",
+    "trainerName": "David Okonkwo",
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2025-03-05T00:00:00Z"
+  },
+  {
+    "id": "dp-005",
+    "slug": "paleo-whole30-plan",
+    "name": "Paleo Whole30 Plan",
+    "description": "30-day elimination diet focused on whole foods to reset your metabolism and energy levels.",
+    "longDescription": "This 30-day plan follows the Whole30 protocol—no grains, dairy, legumes, sugar, or alcohol. The goal is to eliminate common inflammatory foods and then systematically reintroduce them to identify personal triggers. Every meal is built around quality protein sources, healthy fats, and a rainbow of vegetables. Includes a comprehensive reintroduction guide for days 31-45, a symptom tracking template, and recipes that make eating this way genuinely enjoyable. Expect improved energy, better digestion, and clearer thinking.",
+    "duration": "4 weeks",
+    "goal": "detox",
+    "caloriesPerDay": 1800,
+    "price": 75,
+    "image": "",
+    "mealsPerDay": 3,
+    "dietaryType": "paleo",
+    "sampleMeals": [
+      { "mealType": "breakfast", "name": "Sweet Potato Hash with Eggs & Sausage", "calories": 480, "protein": 28, "carbs": 38, "fat": 24 },
+      { "mealType": "lunch", "name": "Grilled Shrimp Salad with Olive Oil Dressing", "calories": 420, "protein": 32, "carbs": 18, "fat": 26 },
+      { "mealType": "dinner", "name": "Roasted Chicken Thighs with Root Vegetables", "calories": 560, "protein": 38, "carbs": 32, "fat": 28 }
+    ],
+    "trainerId": "trn-005",
+    "trainerName": "David Okonkwo",
+    "createdAt": "2024-09-01T00:00:00Z",
+    "updatedAt": "2025-03-01T00:00:00Z"
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "slug": "12-week-strength-builder",
+    "name": "12-Week Strength Builder",
+    "description": "A progressive strength programme that takes you from fundamentals to advanced compound lifts.",
+    "longDescription": "This 12-week programme is designed for intermediate lifters who want to build a serious strength foundation. The programme follows a linear periodisation model, starting with hypertrophy-focused work in weeks 1-4, transitioning to strength in weeks 5-8, and peaking with intensity blocks in weeks 9-12. Each week includes 4 training days targeting the major compound movements: squat, bench press, deadlift, and overhead press. Accessory exercises are carefully selected to address common weaknesses and prevent imbalances.",
+    "duration": "12 weeks",
+    "level": "intermediate",
+    "price": 299,
+    "image": "",
+    "modules": [
+      { "title": "Foundation & Technique", "description": "Movement assessment, form refinement, and baseline strength testing across all major lifts.", "week": 1, "duration": "60 min" },
+      { "title": "Hypertrophy Block", "description": "Higher volume work focused on muscle building with moderate loads and controlled tempos.", "week": 3, "duration": "70 min" },
+      { "title": "Strength Transition", "description": "Shift to lower rep ranges with heavier loads. Introduction to RPE-based auto-regulation.", "week": 5, "duration": "75 min" },
+      { "title": "Intensity Peak", "description": "Heavy singles and doubles. Peak week testing and PR attempts on all four main lifts.", "week": 10, "duration": "80 min" },
+      { "title": "Deload & Retest", "description": "Active recovery week with reduced volume, followed by comprehensive strength retesting.", "week": 12, "duration": "60 min" }
+    ],
+    "trainerId": "trn-001",
+    "trainerName": "James Mitchell",
+    "participants": 34,
+    "maxParticipants": 50,
+    "createdAt": "2024-06-01T00:00:00Z",
+    "updatedAt": "2025-02-15T00:00:00Z"
+  },
+  {
+    "slug": "fat-loss-bootcamp",
+    "name": "Fat Loss Bootcamp",
+    "description": "An intense 8-week programme combining HIIT, strength circuits, and nutrition guidance.",
+    "longDescription": "This high-intensity bootcamp is designed for anyone serious about dropping body fat and building lean muscle. Over 8 weeks, you'll train 5 days per week with a mix of HIIT sessions, strength circuits, and active recovery days. The programme is paired with a custom nutrition plan from our dietitians, ensuring you're fuelling your workouts while maintaining a calorie deficit. Weekly weigh-ins and body composition tracking keep you accountable and motivated.",
+    "duration": "8 weeks",
+    "level": "beginner",
+    "price": 199,
+    "image": "",
+    "modules": [
+      { "title": "Kickoff & Assessment", "description": "Body composition testing, goal setting, and introduction to the training format.", "week": 1, "duration": "60 min" },
+      { "title": "Circuit Foundations", "description": "Learning key movements, building work capacity, and establishing training rhythm.", "week": 2, "duration": "45 min" },
+      { "title": "Intensity Ramp", "description": "Increased training density with shorter rest periods and added exercise complexity.", "week": 4, "duration": "50 min" },
+      { "title": "Peak Conditioning", "description": "Maximum intensity weeks with advanced supersets and metabolic finishers.", "week": 6, "duration": "55 min" },
+      { "title": "Final Challenge", "description": "Benchmark retest, body composition comparison, and next-step programme planning.", "week": 8, "duration": "60 min" }
+    ],
+    "trainerId": "trn-003",
+    "trainerName": "Marcus Williams",
+    "participants": 52,
+    "maxParticipants": 60,
+    "createdAt": "2024-07-01T00:00:00Z",
+    "updatedAt": "2025-03-01T00:00:00Z"
+  },
+  {
+    "slug": "mobility-masterclass",
+    "name": "Mobility Masterclass",
+    "description": "6 weeks of targeted mobility work to unlock pain-free movement and better posture.",
+    "longDescription": "If you sit at a desk all day or feel stiff and restricted in your movements, this programme is for you. Over 6 weeks, we systematically work through every major joint and muscle group using techniques from Functional Range Conditioning (FRC), yoga, and physical therapy. Each session includes joint CARs (controlled articular rotations), PAILs/RAILs stretches, and movement integration drills. You'll finish with significantly improved range of motion and a daily maintenance routine.",
+    "duration": "6 weeks",
+    "level": "beginner",
+    "price": 149,
+    "image": "",
+    "modules": [
+      { "title": "Assessment & Baseline", "description": "Joint-by-joint mobility screen and flexibility baseline measurements.", "week": 1, "duration": "60 min" },
+      { "title": "Spine & Hips", "description": "Thoracic spine mobility, hip flexor release, and core integration.", "week": 2, "duration": "50 min" },
+      { "title": "Shoulders & Ankles", "description": "Shoulder CARs, ankle dorsiflexion work, and overhead squat progression.", "week": 3, "duration": "50 min" },
+      { "title": "Integration", "description": "Combining improved mobility into functional movement patterns.", "week": 5, "duration": "55 min" },
+      { "title": "Retest & Maintenance", "description": "Final mobility screen, comparison to baseline, and daily maintenance plan.", "week": 6, "duration": "60 min" }
+    ],
+    "trainerId": "trn-004",
+    "trainerName": "Elena Rodriguez",
+    "participants": 28,
+    "maxParticipants": 40,
+    "createdAt": "2024-08-01T00:00:00Z",
+    "updatedAt": "2025-02-20T00:00:00Z"
+  },
+  {
+    "slug": "advanced-powerlifting",
+    "name": "Advanced Powerlifting",
+    "description": "Competition-focused programme for experienced lifters targeting platform PRs.",
+    "longDescription": "This 16-week peaking programme is designed for competitive powerlifters or advanced lifters preparing for a meet. Built on a conjugate-style training model, it develops absolute strength, speed strength, and competition-specific technique. The programme includes weekly max effort and dynamic effort days, plus targeted assistance work for weak points. You'll receive detailed video analysis of your lifts, weekly programme adjustments, and a complete competition-day strategy including warm-up progression and attempt selection.",
+    "duration": "16 weeks",
+    "level": "advanced",
+    "price": 499,
+    "image": "",
+    "modules": [
+      { "title": "Off-Season Base", "description": "High volume hypertrophy work to build a larger strength base and address weaknesses.", "week": 1, "duration": "90 min" },
+      { "title": "Strength Accumulation", "description": "Transition to heavier loads with competition-style pause squats, close-grip bench, and deficit pulls.", "week": 5, "duration": "90 min" },
+      { "title": "Intensification", "description": "Heavy singles and doubles at 85-95% with competition commands and tempo work.", "week": 10, "duration": "90 min" },
+      { "title": "Peaking", "description": "Tapering volume while maintaining intensity. Mock meet simulation and attempt planning.", "week": 14, "duration": "75 min" },
+      { "title": "Competition Week", "description": "Active recovery, warm-up rehearsal, and competition-day strategy finalisation.", "week": 16, "duration": "60 min" }
+    ],
+    "trainerId": "trn-001",
+    "trainerName": "James Mitchell",
+    "participants": 12,
+    "maxParticipants": 15,
+    "createdAt": "2024-09-01T00:00:00Z",
+    "updatedAt": "2025-03-10T00:00:00Z"
+  },
+  {
+    "slug": "postpartum-recovery",
+    "name": "Postpartum Recovery Programme",
+    "description": "A gentle, evidence-based programme for new mothers returning to exercise safely.",
+    "longDescription": "This 10-week programme is designed specifically for postpartum women looking to safely rebuild core strength, pelvic floor function, and overall fitness. Developed in collaboration with pelvic health physiotherapists, the programme progresses from gentle breathing and activation exercises in the early weeks to full-body strength training by week 10. Each stage includes diastasis recti assessment, pelvic floor screening, and modified exercises that respect the body's recovery timeline. Suitable for both vaginal delivery and C-section recovery (with medical clearance).",
+    "duration": "10 weeks",
+    "level": "beginner",
+    "price": 249,
+    "image": "",
+    "modules": [
+      { "title": "Foundation & Breathing", "description": "Diaphragmatic breathing, pelvic floor activation, and gentle core reconnection.", "week": 1, "duration": "30 min" },
+      { "title": "Activation Progression", "description": "Transverse abdominis engagement, glute activation, and walking programme.", "week": 3, "duration": "35 min" },
+      { "title": "Strength Reintroduction", "description": "Bodyweight exercises, resistance band work, and functional movement patterns.", "week": 5, "duration": "40 min" },
+      { "title": "Full-Body Integration", "description": "Compound movements, light weights, and progressive loading strategies.", "week": 8, "duration": "45 min" },
+      { "title": "Confidence Building", "description": "Return-to-activity planning, gym transition guide, and ongoing maintenance programme.", "week": 10, "duration": "45 min" }
+    ],
+    "trainerId": "trn-006",
+    "trainerName": "Lisa Thompson",
+    "participants": 19,
+    "maxParticipants": 25,
+    "createdAt": "2024-10-01T00:00:00Z",
+    "updatedAt": "2025-03-05T00:00:00Z"
+  },
+  {
+    "slug": "mind-body-wellness",
+    "name": "Mind & Body Wellness Journey",
+    "description": "An 8-week holistic programme combining yoga, meditation, and mindful movement for complete wellbeing.",
+    "longDescription": "This programme addresses the often-neglected connection between mental and physical health. Over 8 weeks, you'll progress through a carefully sequenced blend of yoga practice, guided meditation sessions, breathwork, and mindful movement exercises. Each week builds on the last, gradually deepening your practice and your understanding of the mind-body connection. Participants report improved sleep, reduced anxiety, better focus, and a renewed sense of energy and vitality.",
+    "duration": "8 weeks",
+    "level": "beginner",
+    "price": 179,
+    "image": "",
+    "modules": [
+      { "title": "Introduction & Foundation", "description": "Mindfulness fundamentals, basic breathing techniques, and gentle movement assessment.", "week": 1, "duration": "60 min" },
+      { "title": "Building the Practice", "description": "Daily meditation routines, sun salutation sequences, and body awareness exercises.", "week": 3, "duration": "65 min" },
+      { "title": "Deepening the Connection", "description": "Advanced breathwork, vinyasa flows, and guided visualisation techniques.", "week": 5, "duration": "70 min" },
+      { "title": "Integration", "description": "Combining all elements into a sustainable daily practice, stress management frameworks.", "week": 7, "duration": "75 min" },
+      { "title": "Sustainability", "description": "Personalised ongoing practice plan, community resources, and progress celebration.", "week": 8, "duration": "60 min" }
+    ],
+    "trainerId": "trn-004",
+    "trainerName": "Elena Rodriguez",
+    "participants": 22,
+    "maxParticipants": 30,
+    "createdAt": "2024-11-01T00:00:00Z",
+    "updatedAt": "2025-03-01T00:00:00Z"
+  }
+]

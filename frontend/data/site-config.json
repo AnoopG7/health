@@ -1,0 +1,42 @@
+{
+  "name": "VitalEdge",
+  "tagline": "Your Edge to Total Health & Fitness",
+  "description": "Transform your body and mind with expert coaching, personalised programmes, and a supportive community at VitalEdge.",
+  "url": "https://vitaledge.health",
+  "socials": {
+    "twitter": "https://twitter.com/vitaledge",
+    "instagram": "https://instagram.com/vitaledge",
+    "facebook": "https://facebook.com/vitaledge",
+    "linkedin": "https://linkedin.com/company/vitaledge",
+    "youtube": "https://youtube.com/@vitaledge"
+  },
+  "contact": {
+    "email": "hello@vitaledge.health",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Fitness Ave, Suite 200, New York, NY 10001"
+  },
+  "navLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Trainers", "href": "/trainers" },
+    { "label": "Programs", "href": "/programs" },
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footerLinks": {
+    "services": ["Physiotherapy", "Personal Training", "Nutrition Coaching", "HIIT & Cardio", "Yoga & Mobility", "Sports Massage"],
+    "company": ["About", "Careers", "Blog", "Press"],
+    "support": ["Contact", "FAQ", "Help Centre", "Community"],
+    "legal": ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+  },
+  "businessHours": {
+    "monday": "06:00 - 21:00",
+    "tuesday": "06:00 - 21:00",
+    "wednesday": "06:00 - 21:00",
+    "thursday": "06:00 - 21:00",
+    "friday": "06:00 - 21:00",
+    "saturday": "08:00 - 18:00",
+    "sunday": "08:00 - 16:00"
+  }
+}

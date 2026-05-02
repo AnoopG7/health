@@ -1,0 +1,56 @@
+[
+  {
+    "id": "usr-demo",
+    "name": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "password": "$2b$10$placeholderHashForDemo123",
+    "phone": "+1 (555) 987-6543",
+    "avatar": "",
+    "joinedDate": "2024-06-15",
+    "role": "client",
+    "preferences": {
+      "theme": "dark",
+      "emailNotifications": true,
+      "smsNotifications": false
+    },
+    "bookings": ["bkg-001", "bkg-002", "bkg-003", "bkg-004", "bkg-005"]
+  },
+  {
+    "id": "usr-002",
+    "name": "Jane Smith",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane@example.com",
+    "password": "$2b$10$placeholderHashForDemo456",
+    "phone": "+1 (555) 456-7890",
+    "avatar": "",
+    "joinedDate": "2024-09-20",
+    "role": "client",
+    "preferences": {
+      "theme": "light",
+      "emailNotifications": true,
+      "smsNotifications": true
+    },
+    "bookings": []
+  },
+  {
+    "id": "usr-admin",
+    "name": "Admin User",
+    "firstName": "Admin",
+    "lastName": "User",
+    "email": "admin@vitaledge.health",
+    "password": "$2b$10$placeholderHashForAdmin789",
+    "phone": "+1 (555) 000-0000",
+    "avatar": "",
+    "joinedDate": "2024-01-01",
+    "role": "admin",
+    "preferences": {
+      "theme": "dark",
+      "emailNotifications": true,
+      "smsNotifications": true
+    },
+    "bookings": []
+  }
+]

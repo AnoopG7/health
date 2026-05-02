@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Starter",
+    "price": 29,
+    "period": "session",
+    "description": "Perfect for beginners exploring what VitalEdge has to offer.",
+    "features": [
+      { "label": "1 session per week", "included": true },
+      { "label": "Initial fitness assessment", "included": true },
+      { "label": "Email support", "included": true },
+      { "label": "Custom training plan", "included": false },
+      { "label": "Nutrition guidance", "included": false },
+      { "label": "Priority booking", "included": false },
+      { "label": "24/7 app access", "included": false }
+    ],
+    "cta": "Get Started",
+    "popular": false,
+    "discount": ""
+  },
+  {
+    "name": "Standard",
+    "price": 59,
+    "period": "session",
+    "description": "Our most popular plan — serious results for committed clients.",
+    "features": [
+      { "label": "3 sessions per week", "included": true },
+      { "label": "Full fitness assessment", "included": true },
+      { "label": "Priority email & chat support", "included": true },
+      { "label": "Custom training plan", "included": true },
+      { "label": "Basic nutrition guidance", "included": true },
+      { "label": "Priority booking", "included": true },
+      { "label": "24/7 app access", "included": false }
+    ],
+    "cta": "Get Started",
+    "popular": true,
+    "discount": "Save 15%"
+  },
+  {
+    "name": "Premium",
+    "price": 99,
+    "period": "session",
+    "description": "The full VitalEdge experience — maximum results, maximum support.",
+    "features": [
+      { "label": "Daily sessions available", "included": true },
+      { "label": "Comprehensive assessment", "included": true },
+      { "label": "24/7 direct trainer access", "included": true },
+      { "label": "Custom periodised plan", "included": true },
+      { "label": "Full nutrition coaching", "included": true },
+      { "label": "Priority booking", "included": true },
+      { "label": "24/7 app access", "included": true }
+    ],
+    "cta": "Get Started",
+    "popular": false,
+    "discount": "Save 20%"
+  }
+]

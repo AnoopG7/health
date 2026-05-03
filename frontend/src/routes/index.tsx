@@ -1,7 +1,7 @@
 import { lazy, Suspense, type ComponentType } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from '@/constants/routes'
-import { RootLayout, AuthLayout, BookingLayout } from '@/layouts'
+import { RootLayout, BookingLayout } from '@/layouts'
 import { ProtectedRoute } from '@/components/auth'
 import PageSkeleton from '@/components/common/PageSkeleton'
 
@@ -77,14 +77,10 @@ export default function AppRoutes() {
         <Route path={ROUTES.CONTACT} element={<LazyRoute element={Contact} />} />
         <Route path={ROUTES.PRICING} element={<LazyRoute element={Pricing} />} />
         <Route path={ROUTES.SHOWCASE} element={<LazyRoute element={Showcase} />} />
-        <Route path="*" element={<LazyRoute element={NotFound} />} />
-      </Route>
-
-      {/* Auth routes with minimal layout */}
-      <Route element={<AuthLayout />}>
         <Route path={ROUTES.LOGIN} element={<AuthLazyRoute element={Login} />} />
         <Route path={ROUTES.REGISTER} element={<AuthLazyRoute element={Register} />} />
         <Route path={ROUTES.FORGOT_PASSWORD} element={<AuthLazyRoute element={ForgotPassword} />} />
+        <Route path="*" element={<LazyRoute element={NotFound} />} />
       </Route>
 
       {/* Protected account routes with full layout */}

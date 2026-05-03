@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { getServiceBySlug } from '@/services'
 import { PageMeta } from '@/components/common'
 import { useBookingStore } from '@/store'
 import { ROUTES } from '@/constants/routes'
@@ -11,7 +10,7 @@ import {
   StepTimeLocation,
   StepPersonalInfo,
   StepPayment,
-} from './steps'
+} from '@/components/booking'
 import { Check } from 'lucide-react'
 
 const steps = [
@@ -31,23 +30,12 @@ const stepComponents: Record<number, React.ReactNode> = {
 }
 
 export default function Booking() {
-  const { serviceSlug } = useParams<{ serviceSlug: string }>()
   const currentStep = useBookingStore((s) => s.currentStep)
-  const setStep = useBookingStore((s) => s.setStep)
-  const setService = useBookingStore((s) => s.setService)
   const resetBooking = useBookingStore((s) => s.resetBooking)
 
   useEffect(() => {
-    if (serviceSlug) {
-      getServiceBySlug(serviceSlug).then((s) => {
-        if (s) {
-          setService(s)
-          setStep(2)
-        }
-      })
-    }
-    return () => resetBooking()
-  }, [serviceSlug])
+    resetBooking()
+  }, [])
 
   return (
     <>

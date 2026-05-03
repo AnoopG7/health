@@ -19,7 +19,7 @@ interface BookingState {
   setStep: (step: BookingStep) => void
   setService: (service: Service) => void
   setTrainer: (trainer: Trainer) => void
-  setDate: (date: string) => void
+  setDate: (date: string | null) => void
   setTime: (time: string) => void
   setLocation: (location: 'online' | 'in-person') => void
   setPersonalInfo: (data: Partial<BookingState['personalInfo']>) => void

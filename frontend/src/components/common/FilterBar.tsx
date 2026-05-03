@@ -20,7 +20,17 @@ interface FilterBarProps {
   onReset?: () => void
   searchPlaceholder?: string
   className?: string
+  sortOptions?: { label: string; value: string }[]
+  defaultSort?: string
 }
+
+const defaultSortOptions = [
+  { label: 'Name (A-Z)', value: 'name' },
+  { label: 'Price (Low to High)', value: 'price-low' },
+  { label: 'Price (High to Low)', value: 'price-high' },
+  { label: 'Highest Rated', value: 'rating' },
+  { label: 'Most Popular', value: 'popular' },
+]
 
 export default function FilterBar({
   categories,
@@ -31,6 +41,8 @@ export default function FilterBar({
   onReset,
   searchPlaceholder = 'Search...',
   className,
+  sortOptions = defaultSortOptions,
+  defaultSort = 'name',
 }: FilterBarProps) {
   return (
     <div className={cn('space-y-4', className)}>
@@ -43,17 +55,15 @@ export default function FilterBar({
             className="pl-9"
           />
         </div>
-        <Select onValueChange={onSortChange} defaultValue="name">
+        <Select onValueChange={onSortChange} defaultValue={defaultSort}>
           <SelectTrigger className="w-full sm:w-48">
             <SlidersHorizontal className="mr-2 h-4 w-4" />
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="name">Name (A-Z)</SelectItem>
-            <SelectItem value="price-low">Price (Low to High)</SelectItem>
-            <SelectItem value="price-high">Price (High to Low)</SelectItem>
-            <SelectItem value="rating">Highest Rated</SelectItem>
-            <SelectItem value="popular">Most Popular</SelectItem>
+            {sortOptions.map((opt) => (
+              <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+            ))}
           </SelectContent>
         </Select>
         {onReset && (
@@ -65,13 +75,13 @@ export default function FilterBar({
       {categories.length > 0 && (
         <div className="flex flex-wrap gap-2">
           <Badge
-            variant={!activeCategory ? 'default' : 'outline'}
+            variant={activeCategory === 'all' ? 'default' : 'outline'}
             className="cursor-pointer"
-            onClick={() => onCategoryChange?.('')}
+            onClick={() => onCategoryChange?.('all')}
           >
             All
           </Badge>
-          {categories.map((cat) => (
+          {categories.filter((c) => c.value !== 'all').map((cat) => (
             <Badge
               key={cat.value}
               variant={activeCategory === cat.value ? 'default' : 'outline'}

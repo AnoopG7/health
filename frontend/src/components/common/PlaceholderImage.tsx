@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 
 interface PlaceholderImageProps {
-  type?: 'avatar' | 'banner' | 'thumbnail' | 'square'
+  type?: 'avatar' | 'banner' | 'thumbnail' | 'square' | 'hero'
   text?: string
   className?: string
 }
@@ -16,6 +16,7 @@ export default function PlaceholderImage({
     banner: 'h-48 w-full rounded-lg md:h-64',
     thumbnail: 'h-40 w-full rounded-lg',
     square: 'aspect-square w-full rounded-lg',
+    hero: 'h-64 w-full rounded-lg md:h-80',
   }
 
   return (

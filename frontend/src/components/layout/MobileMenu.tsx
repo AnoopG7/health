@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ROUTES } from '@/constants/routes'
 import { useAuthStore } from '@/store'
+import { getServices } from '@/services'
+import type { Service } from '@/schemas'
 import ThemeToggle from './ThemeToggle'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
@@ -11,32 +13,33 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { Menu, ChevronDown, ChevronRight, User, LogOut, Settings, Calendar, ArrowRight } from 'lucide-react'
 
 const navItems = [
-  { label: 'Home', href: ROUTES.HOME, icon: 'home' },
-  { label: 'Services', href: ROUTES.SERVICES, icon: 'grid' },
-  { label: 'Trainers', href: ROUTES.TRAINERS, icon: 'users' },
-  { label: 'Programs', href: ROUTES.PROGRAMS, icon: 'target' },
-  { label: 'Pricing', href: ROUTES.PRICING, icon: 'credit-card' },
-  { label: 'Blog', href: ROUTES.BLOG, icon: 'book' },
-  { label: 'Contact', href: ROUTES.CONTACT, icon: 'mail' },
-]
-
-const serviceCategories = [
-  { label: 'Strength Training', href: '/services/strength-training' },
-  { label: 'Physiotherapy', href: '/services/physiotherapy' },
-  { label: 'HIIT & Cardio', href: '/services/hiit-cardio' },
-  { label: 'Yoga & Mobility', href: '/services/yoga-mobility' },
-  { label: 'Sports Massage', href: '/services/sports-massage' },
-  { label: 'Nutrition Coaching', href: '/services/nutrition-coaching' },
-  { label: 'Mental Wellness', href: '/services/mental-wellness' },
+  { label: 'Home', href: ROUTES.HOME },
+  { label: 'Services', href: ROUTES.SERVICES },
+  { label: 'Trainers', href: ROUTES.TRAINERS },
+  { label: 'Programs', href: ROUTES.PROGRAMS },
+  { label: 'Pricing', href: ROUTES.PRICING },
+  { label: 'Blog', href: ROUTES.BLOG },
+  { label: 'Contact', href: ROUTES.CONTACT },
 ]
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [services, setServices] = useState<Service[]>([])
   const location = useLocation()
   const { isAuthenticated, user, logout } = useAuthStore()
 
+  useEffect(() => {
+    getServices().then(setServices)
+  }, [])
+
   const handleNavigate = () => setOpen(false)
+
+  const groupedServices = services.reduce<Record<string, Service[]>>((acc, s) => {
+    if (!acc[s.category]) acc[s.category] = []
+    acc[s.category].push(s)
+    return acc
+  }, {})
 
   const linkVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -92,17 +95,30 @@ export default function MobileMenu() {
                         )}
                       </button>
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="ml-3 mt-1 flex flex-col gap-0.5 border-l-2 border-primary/20 pl-4">
-                      {serviceCategories.map((cat) => (
-                        <Link
-                          key={cat.href}
-                          to={cat.href}
-                          onClick={handleNavigate}
-                          className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                        >
-                          {cat.label}
-                        </Link>
+                    <CollapsibleContent className="ml-3 mt-1 space-y-3 border-l-2 border-primary/20 pl-4">
+                      {Object.entries(groupedServices).map(([category, items]) => (
+                        <div key={category}>
+                          <p className="mb-1 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{category}</p>
+                          {items.map((s) => (
+                            <Link
+                              key={s.slug}
+                              to={`/services/${s.slug}`}
+                              onClick={handleNavigate}
+                              className="flex items-center justify-between rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                            >
+                              <span>{s.name}</span>
+                              <span className="text-xs text-muted-foreground">${s.priceFrom}</span>
+                            </Link>
+                          ))}
+                        </div>
                       ))}
+                      <Link
+                        to={ROUTES.SERVICES}
+                        onClick={handleNavigate}
+                        className="flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-accent"
+                      >
+                        View All <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
                     </CollapsibleContent>
                   </Collapsible>
                 </motion.div>

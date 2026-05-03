@@ -16,18 +16,18 @@ export default function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn('mb-12 space-y-3', align === 'center' && 'text-center', className)}>
+    <div className={cn('mb-16 space-y-4', align === 'center' && 'text-center', className)}>
       {label && (
-        <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+        <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-widest text-primary">
           {label}
         </span>
       )}
-      <h2 className="relative inline-block">
+      <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
         {title}
-        <span className="absolute -bottom-1 left-0 h-1 w-12 rounded-full bg-primary" />
       </h2>
+      <div className={cn('h-1 w-16 rounded-full bg-gradient-to-r from-primary to-secondary', align === 'center' ? 'mx-auto' : '')} />
       {subtitle && (
-        <p className="mx-auto max-w-2xl text-muted-foreground">
+        <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
           {subtitle}
         </p>
       )}

@@ -109,18 +109,18 @@ import {
 import { toast } from 'sonner'
 
 const mockPricingTiers = [
-  { name: 'Basic', price: 29, period: 'session', features: [
+  { name: 'Basic', price: 29, period: 'session', description: 'Perfect for beginners.', features: [
     { label: '1 session/week', included: true }, { label: 'Assessment', included: true },
     { label: 'Email support', included: true }, { label: 'Custom plan', included: false },
-  ], cta: 'Get Started' },
-  { name: 'Standard', price: 59, period: 'session', features: [
+  ], cta: 'Get Started', popular: false, discount: '' },
+  { name: 'Standard', price: 59, period: 'session', description: 'Most popular plan.', features: [
     { label: '3 sessions/week', included: true }, { label: 'Full assessment', included: true },
     { label: 'Priority support', included: true }, { label: 'Custom plan', included: true },
-  ], cta: 'Get Started', popular: true },
-  { name: 'Premium', price: 99, period: 'session', features: [
+  ], cta: 'Get Started', popular: true, discount: 'Save 15%' },
+  { name: 'Premium', price: 99, period: 'session', description: 'Full experience.', features: [
     { label: 'Daily sessions', included: true }, { label: 'Full assessment', included: true },
     { label: '24/7 support', included: true }, { label: 'Custom plan', included: true },
-  ], cta: 'Get Started' },
+  ], cta: 'Get Started', popular: false, discount: 'Save 20%' },
 ]
 
 const mockInvoices = [

@@ -30,8 +30,8 @@ export default function TrainerCard({
   const initials = name.split(' ').map((n) => n[0]).join('')
 
   return (
-    <Card className={cn('card-hover group', className)}>
-      <CardContent className="p-6">
+    <Card className={cn('card-hover group flex h-full', className)}>
+      <CardContent className="flex flex-1 flex-col p-6">
         <div className="mb-4 flex items-start gap-4">
           <PlaceholderImage type="avatar" text={initials} />
           <div className="flex-1">
@@ -41,14 +41,14 @@ export default function TrainerCard({
             <span className="text-xs text-muted-foreground">({reviewCount} reviews)</span>
           </div>
         </div>
-        <div className="mb-4 flex flex-wrap gap-1.5">
+        <div className="mb-4 line-clamp-2 flex flex-wrap gap-1.5">
           {specialties.slice(0, 3).map((spec) => (
             <Badge key={spec} variant="secondary" className="text-xs">
               {spec}
             </Badge>
           ))}
         </div>
-        <div className="flex items-center justify-between border-t pt-4">
+        <div className="mt-auto flex items-center justify-between border-t pt-4">
           <span className="text-sm font-medium text-muted-foreground">
             From ${priceFrom}/session
           </span>

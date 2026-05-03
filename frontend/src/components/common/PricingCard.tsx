@@ -3,26 +3,22 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Check, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-
-interface PricingTier {
-  name: string
-  price: number
-  period: string
-  features: { label: string; included: boolean }[]
-  cta: string
-  popular?: boolean
-}
+import type { PricingTier } from '@/schemas/content'
 
 interface PricingCardProps {
   tier: PricingTier
+  isAnnual?: boolean
   className?: string
 }
 
-export default function PricingCard({ tier, className }: PricingCardProps) {
+export default function PricingCard({ tier, isAnnual = false, className }: PricingCardProps) {
+  const displayPrice = isAnnual ? Math.round(tier.price * 12 * 0.8) : tier.price
+  const displayPeriod = isAnnual ? '/year' : `/${tier.period}`
+
   return (
     <Card
       className={cn(
-        'relative flex flex-col transition-all',
+        'relative flex flex-col transition-all overflow-visible',
         tier.popular && 'border-primary shadow-lg ring-1 ring-primary/20',
         className,
       )}
@@ -34,9 +30,15 @@ export default function PricingCard({ tier, className }: PricingCardProps) {
       )}
       <CardContent className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold">{tier.name}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{tier.description}</p>
         <div className="mt-4 mb-6">
-          <span className="text-4xl font-bold">${tier.price}</span>
-          <span className="text-muted-foreground">/{tier.period}</span>
+          <div className="flex items-baseline gap-1">
+            <span className="text-4xl font-bold">${displayPrice}</span>
+            <span className="text-muted-foreground">{displayPeriod}</span>
+          </div>
+          {isAnnual && tier.discount && (
+            <Badge variant="secondary" className="mt-2">{tier.discount}</Badge>
+          )}
         </div>
         <ul className="mb-6 flex-1 space-y-3">
           {tier.features.map((feature) => (

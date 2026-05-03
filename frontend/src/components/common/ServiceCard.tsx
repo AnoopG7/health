@@ -33,10 +33,10 @@ export default function ServiceCard({
         </Badge>
       )}
       <CardContent className="p-6">
-        <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+        <div className="mb-4 flex w-fit items-center gap-3 rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
           {icon}
         </div>
-        <Badge variant="secondary" className="mb-2">
+        <Badge variant="secondary" className="mb-3">
           {category}
         </Badge>
         <h3 className="mb-2 text-xl font-semibold">{name}</h3>

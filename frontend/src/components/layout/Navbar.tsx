@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ChevronDown, User, LogOut, Settings, Calendar, UserCircle } from 'lucide-react'
+import { ChevronDown, User, LogOut, Settings, Calendar, UserCircle, ArrowRight } from 'lucide-react'
 import { ROUTES } from '@/constants/routes'
 import { useAuthStore } from '@/store'
+import { getServices } from '@/services'
+import type { Service } from '@/schemas'
 import ThemeToggle from './ThemeToggle'
 import MobileMenu from './MobileMenu'
 import { Button } from '@/components/ui/button'
@@ -27,18 +29,10 @@ const navItems = [
   { label: 'Contact', href: ROUTES.CONTACT },
 ]
 
-const serviceCategories = [
-  { label: 'Strength Training', href: '/services/strength-training' },
-  { label: 'Physiotherapy', href: '/services/physiotherapy' },
-  { label: 'HIIT & Cardio', href: '/services/hiit-cardio' },
-  { label: 'Yoga & Mobility', href: '/services/yoga-mobility' },
-  { label: 'Nutrition Coaching', href: '/services/nutrition-coaching' },
-  { label: 'Mental Wellness', href: '/services/mental-wellness' },
-]
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [services, setServices] = useState<Service[]>([])
   const location = useLocation()
   const { isAuthenticated, user, logout } = useAuthStore()
 
@@ -55,7 +49,17 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
+  useEffect(() => {
+    getServices().then(setServices)
+  }, [])
+
   const initials = user ? `${user.firstName[0]}${user.lastName[0]}` : 'VE'
+
+  const groupedServices = services.reduce<Record<string, Service[]>>((acc, s) => {
+    if (!acc[s.category]) acc[s.category] = []
+    acc[s.category].push(s)
+    return acc
+  }, {})
 
   return (
     <motion.header
@@ -89,7 +93,7 @@ export default function Navbar() {
                     <PopoverTrigger asChild>
                       <button
                         className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                          isActive
+                          location.pathname.startsWith('/services')
                             ? 'text-foreground'
                             : 'text-muted-foreground hover:text-foreground'
                         }`}
@@ -98,17 +102,32 @@ export default function Navbar() {
                         <ChevronDown className="h-3.5 w-3.5" />
                       </button>
                     </PopoverTrigger>
-                    <PopoverContent align="start" className="w-56 p-2">
-                      <div className="flex flex-col">
-                        {serviceCategories.map((cat) => (
-                          <Link
-                            key={cat.href}
-                            to={cat.href}
-                            className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            {cat.label}
-                          </Link>
+                    <PopoverContent align="start" className="w-72 p-2">
+                      <div className="space-y-3">
+                        {Object.entries(groupedServices).map(([category, items]) => (
+                          <div key={category}>
+                            <p className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{category}</p>
+                            {items.map((s) => (
+                              <Link
+                                key={s.id}
+                                to={`/services/${s.slug}`}
+                                className="flex items-center justify-between rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
+                              >
+                                <span className="font-medium">{s.name}</span>
+                                <span className="text-xs text-muted-foreground">From ${s.priceFrom}</span>
+                              </Link>
+                            ))}
+                          </div>
                         ))}
+                        <div className="border-t pt-2">
+                          <Link
+                            to={ROUTES.SERVICES}
+                            className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-accent"
+                          >
+                            View All Services
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
                       </div>
                     </PopoverContent>
                   </Popover>

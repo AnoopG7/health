@@ -22,5 +22,7 @@ export const ROUTES = {
   ACCOUNT_PROFILE: '/account/profile',
   ACCOUNT_SETTINGS: '/account/settings',
   SHOWCASE: '/showcase',
+  TERMS: '/terms',
+  PRIVACY: '/privacy',
   NOT_FOUND: '/404',
 } as const

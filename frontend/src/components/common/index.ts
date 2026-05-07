@@ -1,4 +1,5 @@
 export { default as BlogCard } from './BlogCard'
+export { default as Breadcrumb } from './Breadcrumb'
 export { default as FilterBar } from './FilterBar'
 export { default as PageMeta } from './PageMeta'
 export { default as PageSkeleton } from './PageSkeleton'

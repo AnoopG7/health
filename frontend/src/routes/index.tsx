@@ -66,7 +66,7 @@ export default function AppRoutes() {
         <Route path={ROUTES.SERVICES} element={<LazyRoute element={Services} />} />
         <Route path="/services/:slug" element={<LazyRoute element={ServiceDetail} />} />
         <Route path={ROUTES.TRAINERS} element={<LazyRoute element={Trainers} />} />
-        <Route path="/trainers/:id" element={<LazyRoute element={TrainerProfile} />} />
+        <Route path="/trainers/:slug" element={<LazyRoute element={TrainerProfile} />} />
         <Route path={ROUTES.PROGRAMS} element={<LazyRoute element={Programs} />} />
         <Route path="/programs/:slug" element={<LazyRoute element={ProgramDetail} />} />
         <Route path={ROUTES.DIET_PLANS} element={<LazyRoute element={DietPlans} />} />

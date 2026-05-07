@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { ROUTES } from '@/constants/routes'
 import { getServiceBySlug, getServices } from '@/services'
 import type { Service } from '@/schemas/services'
-import { PageMeta, SectionHeading, PlaceholderImage } from '@/components/common'
+import { PageMeta, SectionHeading, PlaceholderImage, PageSkeleton, Breadcrumb } from '@/components/common'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -24,22 +24,40 @@ export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>()
   const [service, setService] = useState<Service | null>(null)
   const [related, setRelated] = useState<Service[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!slug) return
+    setLoading(true)
     getServiceBySlug(slug).then((s) => {
       setService(s ?? null)
       if (s) getServices().then((all) => setRelated(all.filter((r) => r.category === s.category && r.slug !== s.slug).slice(0, 3)))
+      setLoading(false)
     })
   }, [slug])
 
-  if (!service) return <div className="py-20 text-center">Loading...</div>
+  if (loading) return <PageSkeleton />
+  if (!service) return (
+    <section className="flex min-h-[60vh] items-center justify-center py-20">
+      <div className="text-center">
+        <h2 className="mb-2 text-2xl font-bold">Service Not Found</h2>
+        <p className="mb-6 text-muted-foreground">The service you're looking for doesn't exist.</p>
+        <Button asChild><Link to={ROUTES.SERVICES}>Back to Services</Link></Button>
+      </div>
+    </section>
+  )
 
   return (
     <>
       <PageMeta title={`${service.name} — VitalEdge`} description={service.description} />
       <section className="py-20">
         <div className="container mx-auto px-4">
+          <Breadcrumb items={[
+            { label: 'Home', href: ROUTES.HOME },
+            { label: 'Services', href: ROUTES.SERVICES },
+            { label: service.name },
+          ]} />
+
           <div className="mb-12 grid gap-8 lg:grid-cols-2">
             <PlaceholderImage type="banner" text={service.name} className="aspect-video w-full rounded-xl" />
             <div>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ROUTES } from '@/constants/routes'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { Sparkles, ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
@@ -60,15 +60,6 @@ export default function HeroSection() {
           <Button asChild variant="outline" size="lg">
             <Link to={ROUTES.SHOWCASE}>Book a Session</Link>
           </Button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-        >
-          <ArrowRight className="h-5 w-5 rotate-90 text-muted-foreground" />
         </motion.div>
       </div>
     </section>

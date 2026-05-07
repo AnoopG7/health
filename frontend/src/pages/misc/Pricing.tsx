@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { getPricingTiers } from '@/services'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '@/constants/routes'
+import { getPricingTiers, getFaqs } from '@/services'
 import type { PricingTier } from '@/schemas/content'
+import type { Faq } from '@/services/faq'
 import { PageMeta, SectionHeading, PricingCard } from '@/components/common'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -13,15 +16,6 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 
-const faqs = [
-  { q: 'Can I switch plans later?', a: 'Absolutely. You can upgrade or downgrade your plan at any time from your account settings. Changes take effect at the start of your next billing cycle.' },
-  { q: 'Do you offer packages?', a: 'Yes, multi-session packages are available at discounted rates. Contact us for details on bulk pricing for 10, 20, or 50 session bundles.' },
-  { q: 'Is there a free trial?', a: 'We offer a complimentary initial consultation and fitness assessment for all new clients. This gives you a chance to experience our approach before committing.' },
-  { q: 'Do you accept insurance?', a: 'We accept most major insurance plans for physiotherapy and sports massage services. Check with your provider about coverage for personal training and nutrition coaching.' },
-  { q: 'What is your cancellation policy?', a: 'You can cancel or reschedule any session up to 24 hours in advance at no charge. Late cancellations within 24 hours may incur a fee.' },
-  { q: 'Can I share my plan with someone?', a: 'Plans are individual and non-transferable. However, we offer couple and family packages at discounted rates — contact us for details.' },
-]
-
 const guarantees = [
   { icon: Shield, title: 'Satisfaction Guarantee', desc: 'Not happy after your first session? Full refund, no questions asked.' },
   { icon: Zap, title: 'Flexible Scheduling', desc: 'Book, reschedule, or cancel sessions up to 24 hours in advance.' },
@@ -30,9 +24,13 @@ const guarantees = [
 
 export default function Pricing() {
   const [tiers, setTiers] = useState<PricingTier[]>([])
+  const [faqs, setFaqs] = useState<Faq[]>([])
   const [isAnnual, setIsAnnual] = useState(false)
 
-  useEffect(() => { getPricingTiers().then(setTiers) }, [])
+  useEffect(() => {
+    getPricingTiers().then(setTiers)
+    getFaqs().then(setFaqs)
+  }, [])
 
   return (
     <>
@@ -48,16 +46,16 @@ export default function Pricing() {
           />
 
           <div className="mt-8 flex items-center justify-center gap-3">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>Monthly</span>
-            <Button
-              variant="outline"
-              size="sm"
+            <span className={`text-sm font-medium transition-colors ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>Monthly</span>
+            <button
               onClick={() => setIsAnnual(!isAnnual)}
-              className="relative w-14 px-0"
+              className={`relative flex h-7 w-12 items-center rounded-full px-1 transition-colors ${isAnnual ? 'bg-primary' : 'bg-muted'}`}
+              role="switch"
+              aria-checked={isAnnual}
             >
-              <div className={`h-5 w-5 rounded-full bg-primary transition-transform ${isAnnual ? 'translate-x-3' : 'translate-x-0'}`} />
-            </Button>
-            <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
+              <div className={`h-5 w-5 rounded-full bg-background shadow-sm transition-transform ${isAnnual ? 'translate-x-5' : 'translate-x-0'}`} />
+            </button>
+            <span className={`text-sm font-medium transition-colors ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
               Annual <span className="ml-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">Save 20%</span>
             </span>
           </div>
@@ -111,9 +109,9 @@ export default function Pricing() {
           <div className="mx-auto mt-12 max-w-3xl">
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq) => (
-                <AccordionItem key={faq.q} value={faq.q} className="border-b px-0">
-                  <AccordionTrigger className="text-left font-medium">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                <AccordionItem key={faq.id} value={faq.id} className="border-b px-0">
+                  <AccordionTrigger className="text-left font-medium">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -138,10 +136,10 @@ export default function Pricing() {
                   </p>
                   <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <Button size="lg" asChild>
-                      <a href="/contact">Contact Us</a>
+                      <Link to={ROUTES.CONTACT}>Contact Us</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild>
-                      <a href="/services">Explore Services</a>
+                      <Link to={ROUTES.SERVICES}>Explore Services</Link>
                     </Button>
                   </div>
                 </CardContent>

@@ -35,7 +35,7 @@ export default function Booking() {
 
   useEffect(() => {
     resetBooking()
-  }, [])
+  }, [resetBooking])
 
   return (
     <>

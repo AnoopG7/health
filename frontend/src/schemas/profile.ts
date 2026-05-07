@@ -1,12 +1,13 @@
 import { z } from 'zod'
 
 export const profileSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  firstName: z.string().min(1, 'First name is required'),
+  lastName: z.string().min(1, 'Last name is required'),
+  email: z.string().email('Invalid email address'),
   phone: z.string().optional().refine((val) => {
     if (!val) return true
     return /^[+]?[\d\s()-]{7,}$/.test(val)
   }, 'Invalid phone number'),
-  bio: z.string().max(300, 'Bio must be under 300 characters').optional(),
 })
 
 export const passwordChangeSchema = z.object({

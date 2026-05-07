@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react'
 import { getBookingsByUser } from '@/services'
 import type { Booking } from '@/schemas/booking'
 import { PageMeta } from '@/components/common'
+import { useAuthStore } from '@/store'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-
-const statusColors: Record<string, string> = { pending: 'bg-yellow-500', confirmed: 'bg-primary', completed: 'bg-secondary', cancelled: 'bg-muted' }
+import { statusColors } from '@/constants/status-colors'
 
 export default function MyBookings() {
+  const user = useAuthStore((s) => s.user)
   const [bookings, setBookings] = useState<Booking[]>([])
-  useEffect(() => { getBookingsByUser('usr-demo').then(setBookings) }, [])
+
+  useEffect(() => {
+    if (user?.id) getBookingsByUser(user.id).then(setBookings)
+  }, [user?.id])
 
   return (
     <>
